@@ -13,10 +13,10 @@
         <div class="row align-items-center">
             <div class="input-container col">                
                 <div class="input-group mb-3">
-                    <input type="text" aria-label="First name" class="form-control" placeholder="CI name">
-                    <input type="text" aria-label="Last name" class="form-control" placeholder="Device model">
-                    <input type="text" aria-label="Last name" class="form-control" placeholder="Customer number or name">
-                    <input type="text" aria-label="First name" class="form-control" placeholder="Project Managar">
+                    <input type="text" aria-label="First name" class="form-control" autocomplete="on" name="ci-name" placeholder="CI name" id="ci-name">
+                    <input type="text" aria-label="Last name" class="form-control" autocomplete="on" name="device-name" placeholder="Device model"  id="device-name">
+                    <input type="text" aria-label="Last name" class="form-control" autocomplete="on" name="customer-name" placeholder="Customer number or name"  id="customer-name">
+                    <input type="text" aria-label="First name" class="form-control" autocomplete="on" name="pm-name" placeholder="Project Managar"  id="pm-name">
                     <button class="btn btn-outline-secondary" type="button" id="button-addon2">Generate</button>
                 </div>                
             </div>
@@ -33,18 +33,17 @@
                     <div class="config-box col">
                         <div class="input-group">
                             <span class="input-group-text">Config</span>
-                            <textarea class="form-control outputbox" aria-label="With textarea"></textarea>
+                            <textarea id="config-output"class="form-control outputbox" aria-label="With textarea"></textarea>
                         </div>
-                        <button class="btn btn-outline-secondary" type="button">Copy Config</button>
+                        <button class="btn btn-outline-secondary" type="button" id="copy-conf-btn">Copy Config</button>
                     </div>
                     <div class="email-box col">
                         <div class="input-group">
                             <span class="input-group-text">Email</span>
-                            <textarea class="form-control outputbox" aria-label="With textarea">ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham</textarea>
+                            <textarea id="email-output" class="form-control outputbox" aria-label="With textarea"></textarea>
+                            <!-- <input type="text" id="email-output" class="form-control outputbox" aria-label="With textarea"></input> -->
                         </div>
-                        <button class="btn btn-outline-secondary" type="button">Copy Email</button>
+                        <button class="btn btn-outline-secondary" type="button"  id="copy-email-btn">Copy Email</button>
                     </div>
                 </div>    
             </div>
