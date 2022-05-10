@@ -3,51 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MonkeyToolz</title>
 </head>
 <body>
-    <div class="main container mt-5">
-        <div class="row align-items-center">
-            <div class="input-container col">                
-                <div class="input-group mb-3">
-                    <input type="text" aria-label="First name" class="form-control" autocomplete="on" name="ci-name" placeholder="CI name" id="ci-name">
-                    <input type="text" aria-label="Last name" class="form-control" autocomplete="on" name="device-name" placeholder="Device model"  id="device-name">
-                    <input type="text" aria-label="Last name" class="form-control" autocomplete="on" name="customer-name" placeholder="Customer number or name"  id="customer-name">
-                    <input type="text" aria-label="First name" class="form-control" autocomplete="on" name="pm-name" placeholder="Project Managar"  id="pm-name">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Generate</button>
-                </div>                
+    <div class="main container mt-5 container ">
+        <div class="container p-3">
+            
+        
+            <ul class="nav justify-content-end mb-3 col">
+                <li class="nav-item">
+                    <img src="./img/mt-logo.png" alt="monkeytoolz logo" srcset="" class="col" id="logo">
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        </div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">Basic Configuration</a>
+              <form class="d-flex">
+                <input class="form-control me-2" type="text" placeholder="Copy from Build Schedule" aria-label="text" size="120" id="mainInput">
+                <button class="btn btn-outline-success" type="button" id="mainInputBtn">Apply</button>
+              </form>
             </div>
+          </nav>
 
-            <!-- <p>
-                CI	Requested to be picked	Console	CPE Type	Other (addons)	Pick Reference	Customer Directory	Configuration Engineer	Other	Project Manager	Other	When to be Build Date	Additional comments	Build Eng/Support	Date Built	Cloud Keys/Serial number	LIC UDI no:									
-            </p>
-            <p>
-                NET12489-FTTC-C31120APCPBOOTHCHEMIST.CE1	R	2034	Cisco C927-4P		PR006947	Console only please	Ravi Sankar Mummidi		Alexbier de Solabarrieta		20/04/2022		Karel	21/04/2022											
-            </p> -->
-
-            <div class="output-container mt-5">
-                <div class="row align-items-center">
+                <div class="output-container row align-items-center mt-5">
                     <div class="config-box col">
                         <div class="input-group">
-                            <span class="input-group-text">Config</span>
+                            <span class="input-group-text copy-span"><button class="btn-sm btn-secondary copyBtn" type="button" id="copy-conf-btn">Config</button></span>
                             <textarea id="config-output"class="form-control outputbox" aria-label="With textarea"></textarea>
                         </div>
-                        <button class="btn btn-outline-secondary" type="button" id="copy-conf-btn">Copy Config</button>
+                        
                     </div>
                     <div class="email-box col">
                         <div class="input-group">
-                            <span class="input-group-text">Email</span>
+                            <span class="input-group-text copy-span"><button class="btn-sm btn-secondary copyBtn" type="button"  id="copy-email-btn">Email</button></span>
                             <textarea id="email-output" class="form-control outputbox" aria-label="With textarea"></textarea>
-                            <!-- <input type="text" id="email-output" class="form-control outputbox" aria-label="With textarea"></input> -->
                         </div>
-                        <button class="btn btn-outline-secondary" type="button"  id="copy-email-btn">Copy Email</button>
                     </div>
                 </div>    
-            </div>
-        </div>
+
     </div>
 
 
