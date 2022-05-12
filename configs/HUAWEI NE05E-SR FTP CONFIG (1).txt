@@ -1,0 +1,84 @@
+
+[*HUAWEI]display ip int br ---------CONFIGURE IF THERE ISN'T IP ADD
+
+--------------FTP CONNECTION----------------------
+<HUAWEI>ftp 172.17.2.1
+
+Connected to 172.17.2.1.
+
+User(172.17.2.1:(none)):k_tomasino
+
+Enter password:
+-----------------CHANGE DIR TO GET THE .PAT AND .cc FILES
+[ftp]pwd
+257 "/home/k_tomasino"
+
+[ftp]cd /AIP/IOS
+250 Directory successfully changed.
+[ftp]pwd
+257 "/AIP/IOS"
+[ftp]get NE05EV300R003SPH017-SR.PAT
+
+[ftp]get V300R003C10SPC500-NE-05E-SR.cc
+
+[ftp]QUIT
+221 Goodbye.
+
+<HUAWEI>startup patch NE05EV300R003SPH017-SR.PAT all
+
+<HUAWEI>startup system-software V300R003C10SPC500-NE-05E-SR.cc
+<HUAWEI>display start
+MainBoard:
+  Configured startup system software:        cfcard:/V300R005C10SPC100-NE-05E-SR.cc
+  Startup system software:                   cfcard:/V300R005C10SPC100-NE-05E-SR.cc
+  Next startup system software:              cfcard:/V300R003C10SPC500-NE-05E-SR.cc---THIS ONE
+  Startup saved-configuration file:          NULL
+  Next startup saved-configuration file:     cfcard:/vrpcfg.zip
+  Startup paf file:                          default
+  Next startup paf file:                     default
+  Startup patch package:                     cfcard:/NE05EV300R005SPH022-SR.PAT
+  Next startup patch package:                cfcard:/NE05EV300R003SPH017-SR.PAT---THIS ONE
+
+<HUAWEI>reboot
+
+<HUAWEI>display start  ----------CHECK NEW IOS(.cc&.PAT) ARE RUNNING
+
+----COPY ON AIPWEB SERVER THE CONFIG FILE TO THE tftpboot FOLDER FOR FTP DOWNLOAD
+
+<HUAWEI>ftp 172.17.2.1
+User(172.17.2.1:(none)):k_tomasino
+Enter password:
+[ftp]cd /AIP/IOS
+[ftp]pwd
+257 "/AIP/IOS"
+
+[ftp]get NET18868-RC3516DCCG.CE1.cfg config.cfg -----GET CONFIG FILE CHANGE ITS NAME TO config.cfg 
+
+[ftp]quit
+221 Goodbye.
+
+<HUAWEI>startup saved-configuration cfcard:/config.cfg
+<HUAWEI>display star
+MainBoard:
+  Configured startup system software:        cfcard:/V300R003C10SPC500-NE-05E-SR.cc
+  Startup system software:                   cfcard:/V300R003C10SPC500-NE-05E-SR.cc
+  Next startup system software:              cfcard:/V300R003C10SPC500-NE-05E-SR.cc
+  Startup saved-configuration file:          cfcard:/vrpcfg.zip
+  Next startup saved-configuration file:     cfcard:/config.cfg-------------THIS ONE
+  Startup paf file:                          default
+  Next startup paf file:                     default
+  Startup patch package:                     cfcard:/NE05EV300R003SPH017-SR.PAT
+  Next startup patch package:                cfcard:/NE05EV300R003SPH017-SR.PAT
+
+<HUAWEI>reboot
+dont save
+Username:bustradius
+Password:Unr3l1able
+
+<NET18868-RC3516DCCG.CE1>
+
+
+
+
+
+

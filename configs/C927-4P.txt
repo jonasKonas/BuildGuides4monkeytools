@@ -1,0 +1,6 @@
+enable
+configure terminal
+interface vlan1
+ip address dhcp
+no shut
+end

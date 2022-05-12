@@ -1,0 +1,179 @@
+en
+conf t
+int vl 1
+ip add dhcp
+no shut
+end
+del flash:c900-universalk9-mz.SPA.158-3.M6.bin
+del flash:c900-universalk9-mz.SPA.158-3.M2.bin
+
+
+
+@@@@@@@@@@@@C927-4P@@@@@@@@@@@@@@@@
+IOS:
+copy tftp://172.17.2.1/c900-universalk9-mz.SPA.159-3.M3.bin flash:
+Firmware:
+copy tftp://172.17.2.1/c900_VA_A_39x3_B_39x3_26u.bin flash:
+
+BOOT STRING:
+en
+conf t
+boot system flash:c900-universalk9-mz.SPA.159-3.M3.bin
+end
+wr mem
+reload
+
+1 x yealink		PR006201
+@@@@@@@@@@@WS-C2960-24PC-S@@@@@@@@@@@@@@@@@
+c2960-lanlitek9-mz.152-7.E4.bin
+copy tftp://172.17.2.1/c2960-lanlitek9-mz.122-55.SE12.bin flash:
+conf t
+
+BOOT STRING:
+en
+conf t
+boot system flash:c2960-lanlitek9-mz.122-55.SE12.bin
+end
+wr mem
+reload
+
+
+@@@@@@@@@@@WS-C2960L-48PS-LL  Howdens@@@@@@@@@@@@@@@@@
+c2960-lanlitek9-mz.152-7.E4.bin
+copy tftp://172.17.2.1/c2960l-universalk9-mz.152-7.E0a.bin flash:
+conf t
+
+BOOT STRING:
+en
+conf t
+boot system flash:c2960l-universalk9-mz.152-7.E0a.bin
+end
+wr mem
+reload
+@@@@@@@@@@WS-C2960X-48LPS-L@@@@@@@@@@@@@
+copy tftp://172.17.2.1/c2960x-universalk9-mz.152-7.E4.bin flash:
+conf t
+
+BOOT STRING:
+en
+conf t
+boot system flash:c2960x-universalk9-mz.152-7.E4.bin
+end
+wr mem
+reload
+
+
+	
+@@@@@@@@@@@CISCO891-K9@@@@@@@@@@@@@@@@@
+
+en
+conf t
+int vl 1
+ip add dhcp
+no shut
+end
+
+copy tftp://172.17.2.1/c890-universalk9-mz.158-3.M6.bin flash:
+
+
+BOOT STRING:
+en
+conf t
+boot system flash:c890-universalk9-mz.158-3.M6.bin
+end
+wr mem
+reload
+@@@@@@@@@@@@@C1111-4P@@@@@@@@@@@@@@@
+en
+conf t
+int vl 1
+ip add dhcp
+no shut
+end
+del /force flash:c1100-universalk9.16.12.04.SPA.bin
+
+copy usb0:/IOS/c1100-universalk9_ias.16.09.06.SPA.bin flash:
+
+copy tftp://172.17.2.1/c1100-universalk9_ias.16.09.06.SPA.bin flash:
+
+BOOT STRING:
+en
+conf t
+boot system flash:c1100-universalk9_ias.16.09.06.SPA.bin
+end
+wr mem
+reload
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+en
+Copy tftp://172.17.2.1/customer-conf/12489/.cfg startup-config
+reload
+
+
+en
+Copy tftp://172.17.2.1/customer-conf/NDT-Services/NET13785-DERBY.CE2.cfg startup-config
+reload
+en
+Copy tftp://172.17.2.1/customer-conf/Cegedim/NET12489-FTTC-C21979JORDANSCHEMIST.CE1.cfg startup-config
+reload
+en
+Copy tftp://172.17.2.1/customer-conf/Virgincare/NET13196-FTTP-TATTENHAM.CE1.cfg startup-config
+reload
+en
+Copy tftp://172.17.2.1/customer-conf/Galiform/UNMANAGED-NET10946-4G-BROUGHTONASTLEYDJ06.CE1.cfg startup-config
+reload
+
+en
+Copy tftp://172.17.2.1/customer-conf/Cegedim/NET12489-DSL-C31230ASDASTORESSMALLH.CE2.cfg startup-config
+reload
+en
+Copy tftp://172.17.2.1/customer-conf/Cegedim/NET12489-FTTC-C26820LINCOLNCOOPCHEMI.CE1.cfg startup-config
+reload
+en
+Copy tftp://172.17.2.1/customer-conf/Cegedim/NET12489-FTTC-C27629LINCOLNCOOPCHEMI.CE1.cfg startup-config
+reload
+
+en
+Copy tftp://172.17.2.1/customer-conf/14676/NET14676-GATEWAY.CE1.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/31214/NET31214-FTTP-TADCASTER.CE1.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/31214/NET31214-FTTC-RIPONARCADE.CE1.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/31214/NET31214-FTTC-KNARESBOROUGH.CE1.cfg startup-config
+
+
+en
+Copy tftp://172.17.2.1/customer-conf/10946/NET10946-FTTC-BALLYFERMOT8001.CE1.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-ASTOND922.SW2.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-ABERDARED819.SW3.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-CHEPSTOWD930.SW2.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-HALESOWENDA20.SW2.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-DUDLEYDE11.SW2.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-WREXHAMD695.SW3.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-RHYLDD38.SW3.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/10946/UNMANAGED-NET10946-ROSSONWYEDC90.SW2.cfg startup-config
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+license install tftp://172.17.2.1/licenses/FGL2519LHNJ.lic
+
+
+reload
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ROMMON
+
+boot usbflash0:c900-universalk9-mz.SPA.159-3.M3.bin
+Unr3l1able
+
+
+

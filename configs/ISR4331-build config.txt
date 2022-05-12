@@ -1,0 +1,37 @@
+
+fla	@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ADD IP FOR LAN:
+en
+conf t
+Ip tftp source-interface GigabitEthernet0
+int GigabitEthernet0
+ip add dhcp
+no shut
+end
+del flash:isr4300-universalk9.16.09.05.SPA.bin
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ISR4331:
+copy tftp://172.17.2.1/isr4300-universalk9.16.09.06.SPA.bin flash:
+
+copy usb0:IOS/isr4300-universalk9.16.09.06.SPA.bin flash:
+copy usb0:isr4300-universalk9.16.09.06.SPA.bin flash:
+
+BOOT STRING:
+en
+conf t
+boot system flash bootflash:isr4300-universalk9.16.09.06.SPA.bin
+end
+wr mem
+reload
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+TO DOWNLOAD CONFIG:
+en
+Copy tftp://172.17.2.1/customer-conf/18627/NET18627-AGBSOL-SCHOOLACRERD-M85141.CE2.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/18627/NET18627-AGBSC-FIRSTCAREHC-M85051.CE2.cfg startup-config
+en
+Copy tftp://172.17.2.1/customer-conf/30800/NET30800-FTTC-TOOTING.CE1.cfg startup-config
+en
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+LICENSE INSTALL:
+license install tftp://172.17.2.1/licenses/FDO23420ZWK.lic
