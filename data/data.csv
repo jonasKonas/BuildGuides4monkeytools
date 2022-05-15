@@ -1,0 +1,2 @@
+IPciscoVlan1,en,conf t,int vl 1,ip add dhcp,no shut,end
+IPciscoGbEth01,en,conf t,Ip tftp source-interface GigabitEthernet0,int GigabitEthernet0,ip add dhcp,no shut,end
